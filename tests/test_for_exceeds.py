@@ -3,6 +3,7 @@ For the Win students should pass the tests for this file.
 """
 import pytest
 import file_clerk.clerk as clerk
+from webcode_tk import css_tools as css
 from webcode_tk import html_tools as html
 
 project_dir = "project/"
@@ -18,6 +19,7 @@ min_number_of_elements = html.get_number_of_elements_per_file(
 )
 
 
+# HTML Exceeds Tests
 @pytest.fixture
 def html_files():
     html_files = html.get_all_html_files(project_dir)
@@ -54,3 +56,28 @@ def test_for_html_exceeds_number_of_image_files():
     image_files += clerk.get_all_files_of_type(project_dir, "jxl")
     image_files += clerk.get_all_files_of_type(project_dir, "svg")
     assert len(image_files) >= 24
+
+
+# CSS Exceeds Test
+advanced_properties_goals = {
+        "figure": {
+            "properties": ("box-shadow", "border-radius", "animation"),
+            "min_required": 2,
+        },
+        "main": {
+            "properties": ("display",
+                           "justify-content",
+                           "align-items",
+                           "flex-flow",
+                           "flex-direction"),
+            "min_required": 2,
+        }
+    }
+advanced_properties_report = css.get_properties_applied_report(
+    project_dir,
+    advanced_properties_goals)
+
+
+@pytest.mark.parametrize("results", advanced_properties_report)
+def test_for_css_exceeds_advanced_properties_applied(results):
+    assert "pass:" in results[:5]
