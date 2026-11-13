@@ -45,4 +45,12 @@ def test_for_html_exceeds_number_of_image_files():
     image_files += clerk.get_all_files_of_type(project_dir, "png")
     image_files += clerk.get_all_files_of_type(project_dir, "gif")
     image_files += clerk.get_all_files_of_type(project_dir, "webp")
+    image_files += clerk.get_all_files_of_type(project_dir, "avif")
+    image_files += clerk.get_all_files_of_type(project_dir, "apng")
+    image_files += clerk.get_all_files_of_type(project_dir, "jpeg")
+    image_files += clerk.get_all_files_of_type(project_dir, "jfif")
+    image_files += clerk.get_all_files_of_type(project_dir, "pjpeg")
+    image_files += clerk.get_all_files_of_type(project_dir, "pjp")
+    image_files += clerk.get_all_files_of_type(project_dir, "jxl")
+    image_files += clerk.get_all_files_of_type(project_dir, "svg")
     assert len(image_files) >= 24

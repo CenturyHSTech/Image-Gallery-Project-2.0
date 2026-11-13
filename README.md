@@ -77,6 +77,12 @@ The design should be a grid of images styled using fonts, colors, borders, and o
 ### Validity Requirements
 - No HTML or CSS errors (validated via W3C tools)
 
+### For the Win (to get exceeds)
+- at least 12 image tags (inside of figure tags, each with a figcaption)
+- at least 24 images in all (1 for thumbnail and 1 for full-sized)
+- at least 12 links
+- must use at least 2 of the following CSS properties applied to the figure (box-shadow, border-radius, or animation)
+- must use 
 </details>
 
 ---
